@@ -1,0 +1,54 @@
+<html>
+
+    <body>
+        <h2>Code</h2>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+
+        <hr/>
+
+        <h2>Output</h2>
+        <pre>
+            <div id="output">
+            </div>
+        </pre>
+
+
+    <script>
+(function () {
+    var old = console.log;
+    var logger = document.getElementById('output');
+    console.log = function (message) {
+        if (typeof message == 'object') {
+            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : message) + '<br />';
+        } else {
+            logger.innerHTML += message + '<br />';
+        }
+    }
+})();
+    </script>
+        <script id="script">
+            var pizza = true
+            pizza = false
+
+            console.log('pizza value: ' + pizza)
+
+            const pizza2 = true
+
+            console.log('Generates syntax error, with no print.')
+            pizza2 = false
+        </script>
+
+        <script>
+            var script = document.getElementById("script").innerHTML;
+
+            document.getElementById("code").innerHTML = script
+
+        </script>
+    </body>
+</html>
