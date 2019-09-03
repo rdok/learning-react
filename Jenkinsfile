@@ -1,4 +1,11 @@
 pipeline {
+    environment {
+        VIRTUAL_HOST=learning-react.rdok.dev
+        VIRTUAL_PORT=3002
+        LETSENCRYPT_HOST=learning-react.rdok.dev
+        LETSENCRYPT_EMAIL=r.dokollari@gmail.com
+        DEFAULT_EMAIL=r.dokollari@gmail.com
+    }
     agent { label "linux" }
     stages {
         stage('Build') {
@@ -9,7 +16,11 @@ pipeline {
         }        
         stage('Deploy') {
             agent { label "rdok.dev" }
-            steps { echo 'deploy' }
+            steps { sh '''
+                docker-compose down
+                docker-compose build --pull 
+                docker-compose up -d
+            ''' }
         }
     }
 }
