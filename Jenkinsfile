@@ -1,10 +1,10 @@
 pipeline {
     environment {
-        VIRTUAL_HOST=learning-react.rdok.dev
+        VIRTUAL_HOST='learning-react.rdok.dev'
         VIRTUAL_PORT=3002
-        LETSENCRYPT_HOST=learning-react.rdok.dev
-        LETSENCRYPT_EMAIL=r.dokollari@gmail.com
-        DEFAULT_EMAIL=r.dokollari@gmail.com
+        LETSENCRYPT_HOST='learning-react.rdok.dev'
+        LETSENCRYPT_EMAIL='r.dokollari@gmail.com'
+        DEFAULT_EMAIL='r.dokollari@gmail.com'
     }
     agent { label "linux" }
     stages {
