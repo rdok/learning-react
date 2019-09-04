@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+
+  learning-react.rdok.dev:
+    working_dir: /app
+    volumes:
+      - "./public:/usr/share/nginx/html"
+      - ".:/app"
