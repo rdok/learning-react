@@ -1,0 +1,43 @@
+<html>
+
+    <body>
+        <h2>Code</h2>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+
+let lastName = 'lastName'
+let firstName = 'firstName'
+let middleName = 'middleName'
+
+// Traditional concatenation
+console.log('>> Using Traditional concatenation: ')
+console.log(lastName + ', ' + firstName + ' ' + middleName)
+
+// Template strings
+console.log('\n>> Using Template strings concatenation: ')
+console.log(`${lastName}, ${firstName} ${middleName}`)
+
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>

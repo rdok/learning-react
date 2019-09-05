@@ -1,0 +1,60 @@
+<html>
+
+    <body>
+        <h2>Container</h2>
+        <pre id="container">
+        </pre>
+
+        <h2>Code</h2>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+
+let lastName = 'LastName'
+let firstName = 'FirstName'
+let middleName = 'MiddleName'
+let quantity = 3
+let event = 'EventName'
+let price = 10
+let ticketAgent = 'CompanyName'
+
+let message = `
+    Hello ${firstName},
+    
+    Thanks for ordering ${quantity} tickets to ${event}.
+
+    Order Details
+    ${firstName} ${middleName} ${lastName}
+    ${quantity} x $${price} = $${quantity * price} to ${event}
+    
+    You can pick your tickets up at will call 30 minutes before the show. 
+
+    Thanks,
+    
+    ${ticketAgent}
+`
+        var container = document.getElementById('container')
+        container.innerHTML = message
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>
