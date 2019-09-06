@@ -1,0 +1,52 @@
+<html>
+
+    <body>
+
+        <h1>Arrow Functions</h1>
+        <h3>Code</h3>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nTraditional function:');
+///////////////////////////////////////////////////////////////////////////////
+
+        var lordify = function(firstName) {
+            return `${firstName} of Canterbury`
+        }
+
+        console.log(lordify('Dale')) // Dale of Canterbury
+        console.log(lordify('Daryle')) // Daryle of Canterbury 
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nArrow function:');
+///////////////////////////////////////////////////////////////////////////////
+
+        var lordify = firstName => `${firstName} of Canterbury`
+
+        console.log(lordify('Dale')) // Dale of Canterbury
+        console.log(lordify('Daryle')) // Daryle of Canterbury 
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>
