@@ -1,0 +1,55 @@
+<html>
+
+    <body>
+
+        <h1>Default Paramters</h1>
+        <h2>Function</h2>
+        <h3>Code</h3>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+
+            function logActivity(name="Shane McConkey", activity="skiing") {
+                console.log(`${name} loves ${activity}`)
+            }
+
+            logActivity()
+
+            console.log( `======================================================` );
+
+            var defaultPerson = {
+                name: {
+                    first: "Shane",
+                    last: "McConkey",
+                },
+                favouriteActivity: "skiing"
+            }
+
+            function logActivityOfAnyType( person = defaultPerson ) {
+                console.log( `${person.name.first} loves ${person.favouriteActivity}` );
+            }
+
+            logActivityOfAnyType();
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>

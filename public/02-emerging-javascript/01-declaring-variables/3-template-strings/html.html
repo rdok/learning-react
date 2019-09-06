@@ -1,0 +1,52 @@
+<html>
+
+    <body>
+        <h2>Container</h2>
+        <pre id="content">
+        </pre>
+
+        <h2>Code</h2>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+
+        let content = document.getElementById('content');
+        let article = { title: 'Article Title', body: 'Article Body' };
+
+        content.innerHTML = `
+<section>
+    <header>
+        <h2>The HTML5 Blog</h1>
+    </header>
+    <article>
+        <h3>${article.title}</h2>
+        ${article.body}
+    </article>
+    <footer>
+        <p>Copyright ${new Date().getYear()} | The HTML5 Blog
+    </footer>
+</section>
+`
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>
