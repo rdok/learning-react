@@ -1,0 +1,101 @@
+<html>
+
+    <body>
+
+        <h1>`this` and arrow functions</h1>
+        <h3>Code</h3>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+        <script id="script">
+            
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nRegular functions do not block this.')
+///////////////////////////////////////////////////////////////////////////////
+
+var tahoe = {
+    resorts: ["Kirkwood", "Squaw", "Alpine", "Heavenly", "Northstar"],
+    print: function( delay = 1000 ) {
+        setTimeout(function () {
+            console.log(this.resorts.join(", "))
+        }, delay)
+    }
+}
+
+tahoe.print()
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nArrow functions protects the scope of this')
+///////////////////////////////////////////////////////////////////////////////
+var tahoe = {
+    resorts: ["Kirkwood", "Squaw", "Alpine", "Heavenly", "Northstart"],
+    print: function ( delay = 1000 ) {
+        setTimeout(() => {
+            console.log(this.resorts.join(", "))
+        }, delay)
+    }
+}
+
+tahoe.print()
+
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nArrow functions do not block off the scope `this`')
+///////////////////////////////////////////////////////////////////////////////
+var tahoe = {
+    resorts: ["Kirkwood", "Squaw", "Alpine", "Heavenly", "Northstart"],
+    print: ( delay = 1000 ) => {
+        setTimeout(() => {
+            console.log(this.resorts.join(", "))
+        }, delay)
+    }
+}
+
+tahoe.print()
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log(
+            '\nChanging the print function to an arrow function means' 
+            + ' that this is actually the window.'
+        )
+///////////////////////////////////////////////////////////////////////////////
+var tahoe = {
+    print: ( delay = 1000 ) => {
+        setTimeout(() => {
+            let message = `'this' refers to window ${this === window}`
+            console.log(message)
+        }, delay)
+    }
+}
+
+tahoe.print()
+
+var tahoe = {
+    print: function ( delay = 1000 ) {
+        setTimeout(() => {
+            let message = `'this' refers to window ${this === window}`
+            console.log(message)
+        }, delay)
+    }
+}
+
+tahoe.print()
+        </script>
+
+        <script src="/code-logger.js"></script>
+    </body>
+</html>

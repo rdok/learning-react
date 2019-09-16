@@ -1,0 +1,66 @@
+<html>
+
+    <body>
+
+        <h1>Multiline line arrow functions</h1>
+        <h3>Code</h3>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+        <script id="script">
+            
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nOld')
+///////////////////////////////////////////////////////////////////////////////
+var lordify = function(firstName, land) {
+    if( !firstName ) {
+        throw new Error('A firstName is required to lordify')
+    }
+
+    if( !land ) {
+        throw new Error('A land must have a land')
+    }
+
+    return `${firstName} of ${land}`
+}
+console.log( lordify( 'Dale', 'Maryland' ) )
+console.log( lordify( 'Daryle') )
+
+///////////////////////////////////////////////////////////////////////////////
+        console.log('\nNew')
+///////////////////////////////////////////////////////////////////////////////
+var lordify = (firstName, land) => {
+
+    if( !firstName ) {
+        throw new Error('A firstName is required to lordify')
+    }
+
+    if( !land ) {
+        throw new Error('A land must have a land')
+    }
+
+    return `${firstName} of ${land}`
+}
+
+console.log( lordify( 'Dale', 'Maryland' ) )
+console.log( lordify( 'Daryle') )
+
+        </script>
+
+        <script src="/code-logger.js"></script>
+    </body>
+</html>
