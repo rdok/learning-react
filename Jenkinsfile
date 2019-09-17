@@ -8,10 +8,6 @@ pipeline {
     }
     agent { label "linux" }
     stages {
-        stage('Build') {
-            steps {
-            }
-        }
         stage('Test') {
             steps { echo 'test' }
         }        
