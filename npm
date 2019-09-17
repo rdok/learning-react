@@ -1,3 +1,5 @@
+ #!/usr/bin/bash
+
 ttyArg=$([[ -t 1 ]] && echo "--ty" || echo "")
 
 docker run \
