@@ -14,8 +14,8 @@ pipeline {
         stage('Deploy') {
             agent { label "rdok.dev" }
             steps { sh '''
-                ./npm install
-                ./npm run build
+                docker run --volumes-from jenkins.rdok.dev -w $(pwd) --rm node npm install
+                docker run --volumes-from jenkins.rdok.dev -w $(pwd) --rm node npm run build
                 docker-compose build --pull 
                 docker-compose down
                 docker-compose up -d
