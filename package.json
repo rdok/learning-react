@@ -1,0 +1,26 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "Learnig react, hands on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdok/learning-react.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "hands-on",
+    "docker",
+    "es6"
+  ],
+  "author": "Rizart Dokollari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdok/learning-react/issues"
+  },
+  "homepage": "https://github.com/rdok/learning-react#readme"
+}

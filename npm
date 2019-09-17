@@ -1,0 +1,9 @@
+docker run \
+    --user $(id -u) \
+    --workdir /app \
+    --volume $(pwd):/app \
+    --rm  \
+    --interactive \
+    --tty \
+    node \
+    npm $@
