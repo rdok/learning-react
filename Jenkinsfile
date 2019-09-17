@@ -10,8 +10,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker run -u $(id -u) -w /app -v $(pwd):/app --rm node npm install' 
-                sh 'docker run -u $(id -u) -w /app -v $(pwd):/app --rm node npm run build' 
             }
         }
         stage('Test') {
@@ -20,6 +18,8 @@ pipeline {
         stage('Deploy') {
             agent { label "rdok.dev" }
             steps { sh '''
+                ./npm install
+                ./npm run build
                 docker-compose build --pull 
                 docker-compose down
                 docker-compose up -d
