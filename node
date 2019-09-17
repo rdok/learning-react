@@ -6,4 +6,4 @@ docker run \
     --interactive \
     --tty \
     node \
-    npm "$@"
+    "$@"

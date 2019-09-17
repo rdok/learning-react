@@ -9,7 +9,7 @@ pipeline {
     agent { label "linux" }
     stages {
         stage('Build') {
-            steps { echo 'build' }
+            steps { sh './npm run build' }
         }
         stage('Test') {
             steps { echo 'build' }
