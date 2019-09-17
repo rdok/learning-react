@@ -1,13 +1,17 @@
  #!/usr/bin/bash
 
-ttyArg=$([ -t 1 ] && echo "--ty" || echo "")
+useTTY=''
+
+if [ -t 1 ]; then
+    useTTY='--tty --interactive'
+fi
+
 
 docker run \
     --user $(id -u) \
     --workdir /app \
     --volume $(pwd):/app \
     --rm  \
-    --interactive \
-    $ttyArg \
+    $useTTY \
     node \
     npm "$@"
