@@ -1,9 +1,11 @@
+ttyArg=$([[ -t 1 ]] && echo "--ty" || echo "")
+
 docker run \
     --user $(id -u) \
     --workdir /app \
     --volume $(pwd):/app \
     --rm  \
     --interactive \
-    --tty \
+    $ttyArg \
     node \
     npm "$@"

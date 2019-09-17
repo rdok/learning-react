@@ -12,7 +12,7 @@ pipeline {
             steps { sh './npm run build' }
         }
         stage('Test') {
-            steps { echo 'build' }
+            steps { echo 'test' }
         }        
         stage('Deploy') {
             agent { label "rdok.dev" }
