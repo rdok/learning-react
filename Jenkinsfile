@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './npm install' 
-                sh './npm run build' 
+                sh 'docker run -u $(id -u) -w /app -v $(pwd):/app --rm node npm install' 
+                sh 'docker run -u $(id -u) -w /app -v $(pwd):/app --rm node npm run build' 
             }
         }
         stage('Test') {
