@@ -1,0 +1,46 @@
+<html>
+
+    <body>
+
+        <h1>Object Literal Enhancement</h1>
+        <h3>Code</h3>
+        <pre>
+            <div id="code">
+                ...
+            </div>
+
+        </pre>
+
+        <hr/>
+
+        <h2>console.log</h2>
+        <pre>
+            <div id="console.log">
+            </div>
+        </pre>
+
+
+        <script src="/logger.js"></script>
+
+        <script id="script">
+            (async() => {
+                console.log('=========[ Pre-Transpiled ]======================================================')
+                await fetch('/src/Services/02EmergingJavascript/ObjectLiteralEnhancement.js')
+                    .then((response) => {
+                        response.text().then(text => console.log(text) ) 
+                    } )
+
+                console.log('=========[ Transpiled ]===========================================================')
+                await fetch('/hot-public/Services/02EmergingJavascript/ObjectLiteralEnhancement.js')
+                    .then((response) => {
+                        response.text().then(text => console.log(text) ) 
+                    } )
+            })();
+        </script>
+
+        <script src="/hot-public/Services/02EmergingJavascript/ObjectLiteralEnhancement.js"></script>
+
+        <script src="/code-logger.js"></script>
+
+    </body>
+</html>

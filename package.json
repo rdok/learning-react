@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d public/hot"
+    "build": "babel src -d public/hot",
+    "build-public": "babel public/src -d public/hot-public"
   },
   "repository": {
     "type": "git",

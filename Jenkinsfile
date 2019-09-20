@@ -6,13 +6,13 @@ pipeline {
         LETSENCRYPT_EMAIL = 'r.dokollari@gmail.com'
         DEFAULT_EMAIL = 'r.dokollari@gmail.com'
     }
-    agent { label "linux" }
+    agent { label 'linux' }
     stages {
         stage('Test') {
             steps { echo 'test' }
         }        
         stage('Deploy') {
-            agent { label "rdok.dev" }
+            agent { label 'rdok.dev' }
             steps { sh '''
                 docker run --volumes-from jenkins.rdok.dev -w $(pwd) --rm node npm install
                 docker run --volumes-from jenkins.rdok.dev -w $(pwd) --rm node npm run build
