@@ -1,4 +1,6 @@
 pipeline {
+    triggers { cron('H H(18-19) * * *') }
+    options { buildDiscarder(logRotator(daysToKeepStr: '30', numToKeepStr: '100') ) }
     environment {
         VIRTUAL_HOST = 'learning-react.rdok.dev'
         VIRTUAL_PORT = 3002
